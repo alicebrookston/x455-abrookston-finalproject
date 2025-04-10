@@ -1,11 +1,668 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Brookston's Bug Bulletin</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Chewy&family=Delius+Swash+Caps&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <script
+    type="text/JavaScript"
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  ></script>
+  <script
+    type="text/JavaScript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"
+  ></script>
+  <script>
+    $(document).ready(function() {
+      $("#id-guide-table").tablesorter(); 
+    });
+  </script>
+   <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        overflow-x: hidden;  
+        background-color: rgb(238, 238, 199);
+    }
+
+    header {
+        background-color: #a4d6a7;
+        display: flex;
+        justify-content: center;
+        padding: 0px; 
+        align-items: center;
+        z-index: 10; 
+        position: fixed; 
+        top: 0; 
+        width: 100%; 
+        left: 0; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        font-family: "Cherry Bomb One", system-ui;
+        font-weight: 400;
+         font-style: normal;
+        }
+
+    header .logo h1 {
+        font-size: 70px;
+        color: #6a4e23;
+    }
+
+    h2 { 
+      font-size: 50px;
+      color: #2a6234;
+      background-color: #a4d6a7;
+      font-family: "Winky Sans", sans-serif;
+    }
+
+    nav {
+        background-color: #2b9e6c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed; 
+        top: 100px; 
+        width: 100%;
+        left: 0;
+        z-index: 9; 
+        font-family: "Delius Swash Caps", cursive;
+        font-weight: 400;
+        font-style: normal;
+        padding: 14px;
+    }
+
+    .nav-item {
+        margin: 10px;
+    }
+
+    .nav-item a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        display: inline-block;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-item a:hover {
+        text-decoration: underline;
+    }
+
+    .active {
+        background-color: #6a4e23; 
+        block-size: 25px;
+        text-decoration-thickness: 2px;
+        color: white;
+    }
+
+    body {
+        padding-top: 170px; 
+        font-family: "Winky Sans", sans-serif;
+        font-optical-sizing: auto;
+        color:#2a6234;
+        background-color: rgb(238, 238, 199);
+}
+    main {
+        text-align: center;
+        background-color: rgb(238, 238, 199);
+    }
+
+.news-section {
+background-color: rgb(238, 238, 199);
+    }
+
+    .section-title {
+        font-size: 40px;
+        color: #2b9e6c;
+        text-align: center;
+        margin-bottom: 0px;
+        width: 100%;
+    }
+
+    .news-article {
+      background-color: rgb(238, 238, 199);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(84, 80, 80, 0.1);
+        margin-bottom: 5px;
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-wrap: wrap;
+    }
+
+    .article-title {
+        font-size: 30px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .article-content {
+display: flex;
+align-items: flex-start;
+gap: 15px;
+}
+
+.article-image {
+max-width: 300px;
+height: auto;
+}
+
+
+    .article-text {
+        font-size: 20px;
+        color: #644f24;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        padding: 7px;
+    }
+
+    .article-text-2 {
+        font-size: 20px;
+        color: #644f24;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        padding: 7px;
+        padding-top: 15px;
+        height: 250px;
+        overflow:auto;
+    }
+
+    .read-more {
+        font-size: 25px;
+        color: #2b9e6c;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .read-more:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+        background-color: #6a4e23;
+        color: white;
+        padding: 20px; 
+        text-align: center;
+    }
+
+    .header-icons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .header-icons .search-icon,
+    .header-icons .cart-icon {
+        font-size: 2.5rem;
+        color: #6a4e23;
+        cursor: pointer;
+        padding-left: 20px;
+        padding-right: 20px
+    }
+
+    .header-icons .search-icon:hover,
+    .header-icons .cart-icon:hover {
+        color: #2b9e6c;
+    }
+
+    * {
+box-sizing: border-box;
+}
+
+img {
+vertical-align: middle;
+}
+
+.container {
+position: relative;
+}
+
+.mySlides {
+display: none;
+padding-bottom: 5px;
+}
+
+
+.prev
+{
+cursor: pointer;
+position: right;
+width: 50%;
+padding: 3px;
+color: #2b9e6c;
+font-weight: bold;
+font-size: 20px;
+border-radius: 0 3px 3px 0;
+user-select: none;
+-webkit-user-select: none;
+}
+.next {
+cursor: pointer;
+position: left;
+width: 50%;
+padding: 3px;
+color: #2b9e6c;
+font-weight: bold;
+font-size: 20px;
+border-radius: 0 3px 3px 0;
+user-select: none;
+-webkit-user-select: none;
+}
+
+.next {
+right: 40;
+top: 50%;
+}
+
+.prev {
+left: 5;
+top: 50%;
+}
+
+.prev:hover
+{
+background-color: rgb(87, 59, 22);
+}
+.next:hover {
+background-color: rgb(87, 59, 22);
+}
+
+
+.active,
+.demo:hover {
+opacity: 1;
+}
+.table, th, td
+{
+color: #6a4e23;
+position: middle;
+font-family: "Winky Sans", sans-serif;
+font-size: 25px;
+border: 7px solid green;
+border-collapse: collapse;
+border-radius: 5px;
+}
+
+.my-scrolling {
+    height: 300px;
+    overflow: auto;
+}
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+background-color: #d8efcb;
+color: #18511a;
+cursor: pointer;
+padding: 10px;
+width: 100%;
+height: 50%;
+text-align: center;
+font-family: "Winky Sans", sans-serif;
+font-size: 25px;
+border: none;
+outline: none;
+transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+background-color: #826840;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+background-color: rgb(238, 238, 199);
+display: none;
+overflow: hidden;
+}
+
+/* accordion button hover */
+#accordionBtn1:hover,
+  #accordionBtn2:hover {
+    background-color: blanchedalmond !important;
+  }
+
+</style>
+
+    </style>
 </head>
+
 <body>
+
+    <header>
+        <div class="header-icons">
+            <i class="fas fa-search search-icon"></i>
+            <div class="logo">
+                <h1>Brookston's Bug Bulletin</h1>
+            </div>
+            <i class="fas fa-shopping-cart cart-icon"></i>
+        </div>
+    </header>
     
-</body>
+    <nav>
+        <div class="nav-item"><a href="#home" class="nav-link">Home</a></div> 
+        <div class="nav-item"><a href="#news" class="nav-link">News</a></div>
+        <div class="nav-item"><a href="#outreach" class="nav-link">Outreach</a></div>
+        <div class="nav-item"><a href="#id-guide" class="nav-link">ID Guide</a></div>
+        <div class="nav-item"><a href="#stories" class="nav-link">Stories</a></div>
+        <div class="nav-item"><a href="#fun-facts" class="nav-link">Fun Facts</a></div>
+    </nav>
+
+    <main>
+        <section class="home">
+            <div class="about">
+            </div>
+        </section>
+    </main>
+
+    <main>
+        <section id="home" class="home">
+            <img src="home.png" alt="Brookston's Bug Bulletin Image" width="100%">
+        </section>
+    </main>
+
+    <main>
+        <section id="news">
+            <h2>Latest News</h2>
+            <div class="news-article">
+              <h3 class="article-title">New Scarab Beetle Species Discovered in Wyoming, Named After Professor Brust</h3>
+              <p class="article-text">
+                  <img 
+                  style="float: left;
+              max-width: 220px;
+              padding-right: 7px;
+              padding-bottom: 5px; "
+                  src="Brust-beetle.jpeg" alt="Scarab Beetle" />
+                In an exciting entomological breakthrough, a new species of scarab beetle has been discovered by Chadron State College Biology Professor Dr. Mathew Brust. 
+                The beetle, now officially named Lichnanthe brusti, was first collected by Brust in the sand dunes of south-central Wyoming in June 2022. Known for its bee-like wing covers and flight patterns, the beetle’s unusual appearance led Brust to suspect it was a new species.
+                After further investigation and consultation with scarab beetle expert Dr. Matt Paulsen, the beetle was confirmed as a new member of the bumblebee scarab beetle family. The discovery was published in the journal Insecta Mundi in March 2024.
+              In addition to Lichnanthe brusti, the research also led to the identification of another new beetle species, Licnanthe bruni, from a specimen collected over a century ago in Nebraska.
+              Brust, an avid naturalist with a keen eye for unique insects, is thrilled by the recognition, calling the discovery a testament to the value of careful collection and observation. "You never know what might be important," Brust said, reflecting on the serendipity of the find.
+              </p>
+              <a href="https://www.csc.edu/news/2024/newly-discovered-beetle-species-named-for-csc-professor.html" class="read-more" target="_blank">Read More</a>
+          </div>
+
+          <div class="news-article">
+              <h3 class="article-title">Seven New "Walking Leaf" Species Discovered, Enhancing Our Understanding of Camouflage & Biodiversity</h3>
+              <p class="article-text">    
+              <img 
+                  style="float: right;
+              max-width: 300px;
+              padding-left: 7px;
+              padding-bottom: 5px; "
+                  src="1500.avif" alt="Walking Leaf Species" />
+                In an exciting new discovery, researchers have identified seven previously unknown species of leaf insects, commonly known as "walking leaves," known for their remarkable ability to mimic leaves and twigs. These insects, found in India, blend seamlessly into their environment, making them nearly invisible to predators and researchers alike.
+                The discovery, published in the journal ZooKeys, relied on genetic analysis to differentiate the new species from previously recognized ones. Lead researcher Dr. Sarah Bank-Aubin of the University of Göttingen explained that the new species were often mistaken for a larger southeast Asian group due to their similar appearance.
+              While stick and leaf insects are diverse—there are about 3,500 known species—only about 100 are classified as leaf insects. This study not only sheds light on the complexity of insect taxonomy but also underscores the importance of protecting these unique creatures. As Dr. Bank-Aubin notes, the loss of these Indian leaf insects would mean the extinction of an entire species, emphasizing the need for conservation efforts.
+              </p>
+              <a href="https://www.theguardian.com/environment/2023/aug/31/new-walking-leaf-insect-species-discovered-genetic-analysis" class="read-more" target="_blank">Read More</a>
+          </div>
+      </section>
+
+        <section id="outreach">
+            <h2>Outreach Programs</h2>
+            <div class="news-article">
+              <h3 class="article-title">Encouraging Entomological Outreach: Inspiring the Next Generation of Insect Enthusiasts</h3>
+              <p class="article-text">
+                As a passionate entomologist, one of the most rewarding aspects of my work is sharing my love for insects with others. Whether it’s through field trips, museum visits, or hands-on classes in insect preservation, I strive to make the fascinating world of bugs accessible and exciting for everyone. Encouraging entomological outreach is essential not only for fostering a deeper appreciation of biodiversity but also for inspiring future scientists and conservationists. Building a Lifelong Love for Entomology: Through field trips, museum visits, and preservation classes, I aim to inspire a lifelong love for entomology in people of all ages. These experiences show participants that insects are not just pests but fascinating, essential creatures that are worthy of study and protection. Whether you’re a child spotting a ladybug for the first time or an adult learning about insect conservation, the goal is to spark curiosity and wonder.
+                Encouraging entomological outreach fosters a sense of connection to the natural world and helps cultivate the next generation of scientists, conservationists, and insect enthusiasts. I believe that by providing opportunities to engage with insects in meaningful ways, we can foster a deeper understanding of biodiversity and the critical role insects play in maintaining healthy ecosystems.
+                With continued outreach efforts, we can inspire more people to explore the world of entomology and contribute to the preservation of these incredible creatures.
+            </p>
+              <div class="container">
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                  <a class="next" onclick="plusSlides(1)">❯</a>
+                <div class="mySlides">
+                  <div class="numbertext">1 / 3</div>
+                  <img src="outreach.jpg" style="width:25%">
+                </div>
+              
+                <div class="mySlides">
+                  <div class="numbertext">2 / 3</div>
+                  <img src="outreach2.jpg" style="width:25%">
+                </div>
+              
+                <div class="mySlides">
+                  <div class="numbertext">3 / 3</div>
+                  <img src="outreach3.jpg" style="width:25%">
+                </div>
+              <p class="article-text-2">Field trips are an invaluable tool in entomological outreach. There's no better way to learn about insects than to observe them in their natural habitats. I organize trips to local nature reserves, forests, and even urban gardens, where participants can see a wide variety of insects in action.
+                These outings serve multiple purposes. They introduce participants to the rich diversity of species in their own backyard and highlight the role insects play in ecosystems. By guiding participants on how to use field equipment like magnifying glasses, insect nets, and collection jars, I help them develop practical skills for identifying different species and understanding their behaviors.
+                Most importantly, field trips break down the often intimidating world of entomology into something tangible and exciting. When participants spot their first butterfly or spot a rare beetle, they’re not just learning about insects—they’re discovering the joys of scientific exploration. Museum visits are another key part of my outreach efforts. Museums offer the unique opportunity to see the wide array of insects that live on our planet, many of which may be difficult to spot in the wild. I collaborate with local museums to arrange guided tours where participants can view impressive insect collections, from rare specimens to preserved examples of insects from around the world.
+                These visits are a fantastic way to teach participants about the history of entomology, the science of insect classification, and how museum collections serve as vital resources for research and conservation. It also opens up conversations about the challenges insects face, such as habitat loss and climate change, and the importance of conservation efforts. By allowing participants to ask questions and engage with real specimens, museums turn learning into an interactive experience. Another key component of my outreach efforts is offering hands-on classes focused on insect preservation. These workshops introduce participants to the art of collecting and preserving insects, whether for scientific study or personal collections. I teach techniques like pinning, mounting, and using preservation fluids, providing both the skills and knowledge needed to handle insects respectfully.
+                Through these classes, I emphasize the importance of ethical collection practices, teaching participants about the impact of over-collection and the importance of respecting natural habitats. I also stress the value of preserving specimens for future research, highlighting how important it is to document insect species for both educational and conservation purposes.
+                By learning about insect preservation, participants gain a deeper understanding of the meticulous work that goes into building museum collections and research databases. They also develop a new appreciation for the complexity and beauty of the natural world.
+          </div>
+
+        </section>
+        <section id="id-guide">
+          <h2>Identification Guide</h2>
+          <table id="id-guide-table" class="tablesorter">
+            <thead>
+              <tr>
+                <th style="font-size: 45px;">Big 5 Orders</th> 
+                <th style="font-size: 45px;">Order</th>
+                <th style="font-size: 45px;">Examples</th>
+                <th style="font-size: 45px;">Traits to Distinguish</th>
+                <th style="font-size: 45px;">Diversity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="beetle.jpg" style="height:150px;width:300px;"></td>
+                <td>Coleoptera: Beetles</td>
+                <td>Ladybugs, Scarabs, Weevils, Firefly</td>
+                <td>Known for having two pairs of wings, with the forewings hardened into protective sheaths called elytra</td>
+                <td>Over 300,000 described species. Approximately 160 families.</td>
+              </tr>
+              <tr>
+                <td><img src="wasp.jpeg" style="height:150px;width:300px;"></td>
+                <td>Hymenoptera: Bees, Ants, Wasps</td>
+                <td>Bumble Bee, Yellow Jacket, Sawflies</td>
+                <td>Social insects; characterized by their membranous wings and specialized mouthparts for feeding and defense</td>
+                <td>Over 150,000 described species. Close to 100 families.</td>
+              </tr>
+              <tr>
+                <td><img src="butterfly.webp" style="height:150px;width:300px;"></td>
+                <td>Lepidoptera: Butterflies & Moths</td>
+                <td>Monarch, Atlas, Morpho, Luna, Swallowtail</td>
+                <td>Known for scaled wings & coiled, siphoning mouthparts; butterflies fly during the day, moths at night.</td>
+                <td>Around 180,000 described species. Approximately 125 families.</td>
+              </tr>
+              <tr>
+                <td><img src="large.jpg" style="height:150px;width:300px;"></td>
+                <td>Diptera: Flies</td>
+                <td>Mosquito, Blow, Fruit, Crane, Soldier</td>
+                <td>Characterized by having one pair of wings; known for their diverse feeding habits (ex: blood, nectar)</td>
+                <td>Around 150,000 described species. Approximately 150 families.</td>
+              </tr>
+              <tr>
+                <td><img src="hemip.jpeg" style="height:150px;width:300px;"></td>
+                <td>Hemiptera: True Bugs</td>
+                <td>Cicada, Aphid, Leaf Hopper, Shield, Striders</td>
+                <td>Distinguished by beak-like mouthparts used for piercing and sucking plant juices.</td>
+                <td>Over 80,000 described species. Approximately 140 families.</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </section>
+
+        <section id="stories">
+            <h2>Insect Stories</h2>
+            <button class="accordion">Bombardier Beetle Sprays Acid From Its Rear</button>
+<div class="panel">
+  <div class="article-text">
+    <iframe style="float: left;
+    padding-right: 5px;
+    padding-bottom: 5px; "
+    width="560" height="315" 
+    src="https://www.youtube.com/embed/W3sxJNt8CYw?si=4QbQ1VvbihmNp_93" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>
+      Bombardier beetles have a unique and highly effective defense mechanism where they spray a hot, noxious chemical from their rear to deter predators. This explosive chemical weapon is not only startling but can also be harmful to attackers, making it a potent deterrent in the insect world. Inside their abdomen, the beetles store two separate chemicals—hydroquinone and hydrogen peroxide—in specialized reservoirs. These compounds are kept isolated until the beetle perceives a threat, at which point they are rapidly mixed in a specialized reaction chamber.
+      The chemical reaction between hydroquinone and hydrogen peroxide is catalyzed by enzymes and reacts violently, generating intense heat and producing a near-boiling, pressurized gas. This reaction is so exothermic that the liquid can reach temperatures of around 100°C (212°F), effectively turning the beetle into a tiny chemical cannon. The explosion creates a powerful, pulsating jet of acidic spray, which is expelled through a small nozzle-like opening at the rear of the abdomen.
+      What's even more remarkable is the beetle's ability to aim this defensive blast with precision, thanks to a swiveling tip on its abdomen. This allows the beetle to hit targets in almost any direction—even over its own back. Scientists have studied this mechanism not only for its biological ingenuity but also for its potential applications in engineering, particularly in micro-scale propulsion and chemical delivery systems. The bombardier beetle stands as a prime example of nature’s ability to engineer complex systems for survival.
+        </p>
+  </div>
+</section>
+
+<section id="stories">
+<button class="accordion">The Amazing Underwater Tape of the Caddisfly</button>
+<div class="panel">
+  <div class="article-text">
+    <iframe style="float: left;
+    padding-right: 5px;
+    padding-bottom: 5px; "
+    width="560" height="315" 
+    src="https://www.youtube.com/embed/Z3BHrzDHoYo?si=TkWvDPdvzfLGZ7iw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>
+      Caddisfly larvae are remarkable aquatic insects known for their unique behavior of constructing protective cases underwater using materials like sand, small pebbles, plant fragments, or even tiny shells. These larvae live in freshwater environments such as streams, rivers, and ponds, where they scavenge the surrounding materials to create their distinctive homes. To assemble these cases, the larvae produce a type of silk from glands located near their mouths, which functions like a natural adhesive. This silk binds the chosen materials together into sturdy, tube-like structures that the larvae can carry with them as they move.
+      The resulting cases serve multiple important functions. Primarily, they act as a form of armor, shielding the soft-bodied larvae from predators such as fish and larger insects. In addition to protection, the cases provide excellent camouflage, blending in perfectly with the substrate of the streambed and making the larvae nearly invisible to the untrained eye. This clever use of local materials not only increases their chances of survival but also reflects a fascinating form of behavioral adaptation.
+      Interestingly, the design and composition of each larva’s case are closely tied to its immediate surroundings. Because the larvae use whatever materials are readily available, no two cases are exactly alike—each is a unique structure that mirrors the microhabitat it was built in. Some researchers even use caddisfly cases as indicators of environmental health, since the presence and condition of these cases can reflect changes in water quality and biodiversity. The ingenuity of caddisfly larvae showcases the incredible resourcefulness of life underwater and highlights the subtle complexity of aquatic ecosystems.
+        </p>
+  </div>
+</section>
+
+<section id="stories">
+<button class="accordion">Stag Beetles Fight For Love</button>
+<div class="panel">
+  <div class="article-text">
+    <iframe style="float: left;
+    padding-right: 5px;
+    padding-bottom: 5px; "
+    width="560" height="315" 
+    src="https://www.youtube.com/embed/-VWFreC4onI?si=bus8ONPfaqYsKVk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>
+      In the heart of the forest, male stag beetles engage in fierce, dramatic battles, their impressive antler-like mandibles locked in an intense test of strength and dominance. These towering jaws, which resemble the antlers of a stag and give the beetle its name, are not used for feeding but have evolved specifically for these high-stakes confrontations. The duels are a spectacular display of raw power and determination, driven by a single purpose: to win the favor of a nearby female. Unlike many animal battles that are fought over territory or resources, these clashes are all about securing a chance to reproduce.
+      The battles take place on tree trunks, fallen logs, or open patches of forest floor, often attracting the attention of other beetles—and even curious onlookers. With every push, lift, and shove, the combatants try to unbalance and flip one another using their oversized jaws. Sometimes the fights are over in seconds; other times, they can last several minutes as the rivals lock together and test each other's strength to the limit. These encounters, though intense, rarely end in serious injury—victory is typically decided when one beetle is thrown or forced to retreat.
+      The victorious male earns the right to mate, a reward for his physical prowess and persistence. This ritual of competition ensures that only the strongest genes are passed on, playing a vital role in natural selection. The defeated male, meanwhile, may have to wait for another opportunity, or wander off in search of a different potential mate. Watching these beetles engage in their primal contest offers a glimpse into the timeless rhythm of the natural world—a dramatic yet elegant display of evolution in action, where strength, strategy, and instinct all collide in nature's enduring pursuit of love.
+              </p>
+</div>
+</section>
+</main>
+<main>
+        <section id="fun-facts">
+            <h2>Fun Facts About Bugs</h2>
+
+</div>
+  </section>
+    </main>
+
+    <footer>
+        <div class="contact">
+            <p>&copy; Copyright 2025 Brookston’s Bug Bulletin. All Rights Reserved. All content on this website, including but not limited to text, images, graphics, videos, and logos, is the property of Brookston’s Bug Bulletin and is protected by copyright laws. Unauthorized use, reproduction, or distribution of any material from this site without written permission is prohibited. For permission requests or inquiries, please contact directly.</p>
+            <p>Contact Alice Brookston Through:</p>
+            <p>Email: brookston.bugbulletin@gmail.com</p>
+            <p>Phone: (534) 334-3432</p>
+            <p>Social Media: @brookston.bug_bulletin</p>
+            <a href="https://facebook.com/brookston.bug.bulletin" target="_blank">Facebook</a>
+            <a href="https://instagram.com/brookston_bug_bulletin" target="_blank">Instagram</a>
+            <a href="https://twitter.com/brookston_bug_bulletin" target="_blank">Twitter</a>
+        </div>
+    </footer>
+
+<script>
+$(document).ready(function () {
+  $("table#table").tablesorter({
+    sortList: [
+      [1, 2],
+    ] ,
+    CssAsc: "tablesorter-headerAsc",
+    CssDesc: "tablesorter-headerDesc",
+  });
+});
+</script>
+<script>
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          navLinks.forEach(nav => nav.classList.remove('active'));
+
+          link.classList.add('active');
+      });
+  });
+
+      function myAccordion(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          x.previousElementSibling.className =
+            x.previousElementSibling.className.replace("w3-brown", "w3-orange");
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+          x.previousElementSibling.className =
+            x.previousElementSibling.className.replace("w3-orange", "w3-brown");
+        }
+      }
+
+      var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
 </html>
+
