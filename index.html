@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brookston's Bug Bulletin</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Chewy&family=Delius+Swash+Caps&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <script
@@ -688,15 +688,41 @@ overflow: hidden;
     <footer>
         <div class="contact">
             <p>&copy; Copyright 2025 Brookston’s Bug Bulletin. All Rights Reserved. All content on this website, including but not limited to text, images, graphics, videos, and logos, is the property of Brookston’s Bug Bulletin and is protected by copyright laws. Unauthorized use, reproduction, or distribution of any material from this site without written permission is prohibited. For permission requests or inquiries, please contact directly.</p>
-            <p>Contact Alice Brookston Through:</p>
-            <p>Email: brookston.bugbulletin@gmail.com</p>
-            <p>Phone: (534) 334-3432</p>
-            <p>Social Media: @brookston.bug_bulletin</p>
-            <a href="https://facebook.com/brookston.bug.bulletin" target="_blank">Facebook</a>
-            <a href="https://instagram.com/brookston_bug_bulletin" target="_blank">Instagram</a>
-            <a href="https://twitter.com/brookston_bug_bulletin" target="_blank">Twitter</a>
+            <p style="text-decoration: underline;">Contact Alice Brookston Through:</p>
+            <p class="contact-green">Email: brookston.bugbulletin@gmail.com</p>
+            <p class="contact-green">Phone: (534) 334-3432</p>
+            <p class="contact-green">Social Media: @brookston.bug_bulletin</p>
+            <div class="social-media">
+              <a href="https://facebook.com/brookston.bug.bulletin" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://instagram.com/brookston_bug_bulletin" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://twitter.com/brookston_bug_bulletin" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
         </div>
     </footer>
+
+    <style>
+      .social-media a {
+        margin-right: 10px;
+        text-decoration: none;
+        color: rgb(238, 238, 199); 
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+      
+      .social-media a:hover {
+        color: #2b9e6c; 
+      }
+
+      .contact-green {
+  color: #2b9e6c;
+}
+    </style>
 
 <script>
 
