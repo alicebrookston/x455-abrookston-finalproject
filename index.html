@@ -7,8 +7,6 @@
     <title>Brookston's Bug Bulletin</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Chewy&family=Delius+Swash+Caps&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <script
     type="text/JavaScript"
@@ -23,13 +21,12 @@
       $("#id-guide-table").tablesorter(); 
     });
   </script>
-   <style>
+  <style>
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-
 
     html, body {
         height: 100%;
@@ -53,12 +50,27 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
         font-family: "Cherry Bomb One", system-ui;
         font-weight: 400;
-         font-style: normal;
-        }
+        font-style: normal;
+        text-align: center;
+    }
 
     header .logo h1 {
         font-size: 70px;
+        font-family: "Cherry Bomb One", system-ui;
         color: #6a4e23;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        header .logo h1 {
+            font-size: 50px; 
+        }
+    }
+
+    @media (max-width: 700px) {
+        header .logo h1 {
+            font-size: 40px;
+        }
     }
 
     h2 { 
@@ -66,9 +78,9 @@
       color: #2a6234;
       background-color: #a4d6a7;
       font-family: "Winky Sans", sans-serif;
-    }
+      }
 
-    nav {
+    .topnav {
         background-color: #2b9e6c;
         display: flex;
         justify-content: center;
@@ -83,6 +95,9 @@
         font-style: normal;
         padding: 14px;
     }
+
+
+
 
     .nav-item {
         margin: 10px;
@@ -100,6 +115,17 @@
     .nav-item a:hover {
         text-decoration: underline;
     }
+
+
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
 
     .active {
         background-color: #6a4e23; 
@@ -130,6 +156,7 @@ background-color: rgb(238, 238, 199);
         text-align: center;
         margin-bottom: 0px;
         width: 100%;
+        font-family: "Winky Sans", sans-serif;
     }
 
     .news-article {
@@ -143,12 +170,14 @@ background-color: rgb(238, 238, 199);
         padding-left: 15px;
         padding-right: 15px;
         text-wrap: wrap;
+        font-family: "Winky Sans", sans-serif;
     }
 
     .article-title {
         font-size: 30px;
         color: #333;
         margin-bottom: 10px;
+        font-family: "Winky Sans", sans-serif;
     }
 
     .article-content {
@@ -288,13 +317,13 @@ background-color: rgb(87, 59, 22);
 .demo:hover {
 opacity: 1;
 }
-.table, th, td
+.table, th, td, tbody
 {
 color: #6a4e23;
 position: middle;
 font-family: "Winky Sans", sans-serif;
-font-size: 25px;
-border: 7px solid green;
+font-size: 20px;
+border: 5px solid green;
 border-collapse: collapse;
 border-radius: 5px;
 }
@@ -303,7 +332,7 @@ border-radius: 5px;
     height: 300px;
     overflow: auto;
 }
-/* Style the buttons that are used to open and close the accordion panel */
+
 .accordion {
 background-color: #d8efcb;
 color: #18511a;
@@ -319,19 +348,16 @@ outline: none;
 transition: 0.4s;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .accordion:hover {
 background-color: #826840;
 }
 
-/* Style the accordion panel. Note: hidden by default */
 .panel {
 background-color: rgb(238, 238, 199);
 display: none;
 overflow: hidden;
 }
 
-/* accordion button hover */
 #accordionBtn1:hover,
   #accordionBtn2:hover {
     background-color: blanchedalmond !important;
@@ -344,24 +370,27 @@ overflow: hidden;
 
 <body>
 
-    <header>
-        <div class="header-icons">
-            <i class="fas fa-search search-icon"></i>
-            <div class="logo">
-                <h1>Brookston's Bug Bulletin</h1>
-            </div>
-            <i class="fas fa-shopping-cart cart-icon"></i>
+  <header>
+    <div class="header-icons">
+        <i class="fas fa-search search-icon"></i>
+        <div class="logo">
+            <h1>Brookston's Bug Bulletin</h1>
         </div>
-    </header>
-    
-    <nav>
+        <i class="fas fa-shopping-cart cart-icon"></i>
+    </div>
+</header>
+
+    <nav class="topnav">
+      </div>
+      <div class="topnav" id="myTopnav">
         <div class="nav-item"><a href="#home" class="nav-link">Home</a></div> 
         <div class="nav-item"><a href="#news" class="nav-link">News</a></div>
         <div class="nav-item"><a href="#outreach" class="nav-link">Outreach</a></div>
         <div class="nav-item"><a href="#id-guide" class="nav-link">ID Guide</a></div>
         <div class="nav-item"><a href="#stories" class="nav-link">Stories</a></div>
         <div class="nav-item"><a href="#fun-facts" class="nav-link">Fun Facts</a></div>
-    </nav>
+      </div>
+      </nav>
 
     <main>
         <section class="home">
@@ -428,17 +457,17 @@ overflow: hidden;
                   <a class="next" onclick="plusSlides(1)">❯</a>
                 <div class="mySlides">
                   <div class="numbertext">1 / 3</div>
-                  <img src="outreach.jpg" style="width:25%">
+                  <img src="outreach.jpg" style="width:30%">
                 </div>
               
                 <div class="mySlides">
                   <div class="numbertext">2 / 3</div>
-                  <img src="outreach2.jpg" style="width:25%">
+                  <img src="outreach2.jpg" style="width:30%">
                 </div>
               
                 <div class="mySlides">
                   <div class="numbertext">3 / 3</div>
-                  <img src="outreach3.jpg" style="width:25%">
+                  <img src="outreach3.jpg" style="width:30%">
                 </div>
               <p class="article-text-2">Field trips are an invaluable tool in entomological outreach. There's no better way to learn about insects than to observe them in their natural habitats. I organize trips to local nature reserves, forests, and even urban gardens, where participants can see a wide variety of insects in action.
                 These outings serve multiple purposes. They introduce participants to the rich diversity of species in their own backyard and highlight the role insects play in ecosystems. By guiding participants on how to use field equipment like magnifying glasses, insect nets, and collection jars, I help them develop practical skills for identifying different species and understanding their behaviors.
@@ -451,51 +480,52 @@ overflow: hidden;
         </section>
         <section id="id-guide">
           <h2>Identification Guide</h2>
+          <div class="w3-responsive" style="overflow:auto;">
           <table id="id-guide-table" class="tablesorter">
             <thead>
               <tr>
-                <th style="font-size: 45px;">Big 5 Orders</th> 
-                <th style="font-size: 45px;">Order</th>
-                <th style="font-size: 45px;">Examples</th>
-                <th style="font-size: 45px;">Traits to Distinguish</th>
-                <th style="font-size: 45px;">Diversity</th>
+                <th style="font-size: 30px;">Major 5</th> 
+                <th style="font-size: 30px;">Order</th>
+                <th style="font-size: 30px;">Examples</th>
+                <th style="font-size: 26px;">Key Traits</th>
+                <th style="font-size: 30px;">Diversity</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><img src="beetle.jpg" style="height:150px;width:300px;"></td>
+                <td><img src="beetle.jpg" style="height:75px;width:150px;"></td>
                 <td>Coleoptera: Beetles</td>
                 <td>Ladybugs, Scarabs, Weevils, Firefly</td>
-                <td>Known for having two pairs of wings, with the forewings hardened into protective sheaths called elytra</td>
-                <td>Over 300,000 described species. Approximately 160 families.</td>
+                <td>Two pairs of wings, with the forewings hardened into protective sheaths called elytra</td>
+                <td>Over 300,000 described species. Approximately 160 families</td>
               </tr>
               <tr>
-                <td><img src="wasp.jpeg" style="height:150px;width:300px;"></td>
+                <td><img src="wasp.jpeg" style="height:75px;width:150px;"></td>
                 <td>Hymenoptera: Bees, Ants, Wasps</td>
                 <td>Bumble Bee, Yellow Jacket, Sawflies</td>
-                <td>Social insects; characterized by their membranous wings and specialized mouthparts for feeding and defense</td>
-                <td>Over 150,000 described species. Close to 100 families.</td>
+                <td>Social insects; membranous wings and specialized mouthparts for feeding and defense</td>
+                <td>Over 150,000 described species. Close to 100 families</td>
               </tr>
               <tr>
-                <td><img src="butterfly.webp" style="height:150px;width:300px;"></td>
+                <td><img src="butterfly.webp" style="height:75px;width:150px;"></td>
                 <td>Lepidoptera: Butterflies & Moths</td>
                 <td>Monarch, Atlas, Morpho, Luna, Swallowtail</td>
-                <td>Known for scaled wings & coiled, siphoning mouthparts; butterflies fly during the day, moths at night.</td>
-                <td>Around 180,000 described species. Approximately 125 families.</td>
+                <td>Scaled wings & coiled, siphoning mouthparts; butterflies fly during the day, moths at night</td>
+                <td>Around 180,000 described species. Approximately 125 families</td>
               </tr>
               <tr>
-                <td><img src="large.jpg" style="height:150px;width:300px;"></td>
+                <td><img src="large.jpg" style="height:75px;width:150px;"></td>
                 <td>Diptera: Flies</td>
                 <td>Mosquito, Blow, Fruit, Crane, Soldier</td>
-                <td>Characterized by having one pair of wings; known for their diverse feeding habits (ex: blood, nectar)</td>
-                <td>Around 150,000 described species. Approximately 150 families.</td>
+                <td>One pair of wings; known for their diverse feeding habits (ex: blood, nectar)</td>
+                <td>Around 150,000 described species. Approximately 150 families</td>
               </tr>
               <tr>
-                <td><img src="hemip.jpeg" style="height:150px;width:300px;"></td>
+                <td><img src="hemip.jpeg" style="height:75px;width:150px;"></td>
                 <td>Hemiptera: True Bugs</td>
                 <td>Cicada, Aphid, Leaf Hopper, Shield, Striders</td>
-                <td>Distinguished by beak-like mouthparts used for piercing and sucking plant juices.</td>
-                <td>Over 80,000 described species. Approximately 140 families.</td>
+                <td>Beak-like mouthparts used for piercing and sucking plant juices</td>
+                <td>Over 80,000 described species. Approximately 140 families</td>
               </tr>
             </tbody>
           </table>
@@ -555,8 +585,101 @@ overflow: hidden;
 </section>
 </main>
 <main>
-        <section id="fun-facts">
-            <h2>Fun Facts About Bugs</h2>
+        
+  <section id="fun-facts">
+    <h2>Fun Facts About Bugs</h2>
+    <div class="gallery">
+      <img src="Facts-about-bugs-1.jpg" alt="Butterfly" onclick="openModal(0)" data-caption="The red postman butterfly develops its own poison by eating toxic plants!">
+      <img src="Facts-about-bugs-2.jpg" alt="Ladybug" onclick="openModal(1)" data-caption="Large groups of fireflies sometimes flash in unison!">
+      <img src="Facts-about-bugs-3.jpg" alt="Beetle" onclick="openModal(2)" data-caption="One dung beetle can drag 1,141 times its weight: that’s like a human pulling six double-decker buses!">
+      <img src="Facts-about-bugs-4.jpg" alt="Grasshopper" onclick="openModal(3)" data-caption="A ladybird might eat more than 5,000 insects in its lifetime!">
+      <img src="Facts-about-bugs-5.jpg" alt="Dragonfly" onclick="openModal(4)" data-caption="Male giraffe weevils use their long necks to fight each other!">
+      <img src="Facts-about-bugs-6.jpg" alt="Ant" onclick="openModal(5)" data-caption="Bulldog ants can leap seven times the length of their bodies!">
+    </div>
+  
+    <div id="myModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <button class="nav-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+      <div class="modal-content">
+        <img id="modalImage" src="" alt="">
+        <p id="modalCaption" style="color:#e0dccc; text-align:center; margin-top:10px;"></p>
+      </div>
+      <button class="nav-btn next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+  </section>
+  
+  <style>
+  .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 15px;
+  max-width: 100%; 
+  margin: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: 300px; 
+  padding: 5px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+  
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(30, 24, 17, 0.95);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+  
+    .modal-content {
+      max-width: 80%;
+      max-height: 80%;
+      text-align: center;
+    }
+  
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  
+    .close {
+      position: absolute;
+      top: 20px; right: 30px;
+      color: #f2e9dc;
+      font-size: 40px;
+      cursor: pointer;
+    }
+  
+    .nav-btn {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: #f2e9dc; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+.nav-btn:hover {
+  color: #f2e9dc; 
+  background: none;
+}
+  
+    .prev { left: 5px; }
+    .next { right: 5px; }
+  </style>
 
 </div>
   </section>
@@ -576,13 +699,23 @@ overflow: hidden;
     </footer>
 
 <script>
-$(document).ready(function () {
-  $("table#table").tablesorter({
-    sortList: [
-      [1, 2],
-    ] ,
-    CssAsc: "tablesorter-headerAsc",
-    CssDesc: "tablesorter-headerDesc",
+
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+ $(document).ready(function () {
+        $("table#table").tablesorter({
+          sortList: [
+            [1, 2],
+          ] ,
+          CssAsc: "tablesorter-headerAsc",
+          CssDesc: "tablesorter-headerDesc",
   });
 });
 </script>
@@ -634,7 +767,46 @@ function closeModal() {
   document.getElementById("myModal").style.display = "none";
 }
 
-var slideIndex = 1;
+const images = [
+    { src: "Facts-about-bugs-1.jpg", caption: "The red postman butterfly develops its own poison by eating toxic plants!" },
+    { src: "Facts-about-bugs-2.jpg", caption: "Large groups of fireflies sometimes flash in unison!" },
+    { src: "Facts-about-bugs-3.jpg", caption: "One dung beetle can drag 1,141 times its weight: that’s like a human pulling six double-decker buses!" },
+    { src: "Facts-about-bugs-4.jpg", caption: "A ladybird might eat more than 5,000 insects in its lifetime!" },
+    { src: "Facts-about-bugs-5.jpg", caption: "Male giraffe weevils use their long necks to fight each other!" },
+    { src: "Facts-about-bugs-6.jpg", caption: "Bulldog ants can leap seven times the length of their bodies!" },
+  ];
+
+  let currentIndex = 0;
+
+  function openModal(index) {
+    currentIndex = index;
+    updateModal();
+    document.getElementById("myModal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+  }
+
+  function changeSlide(direction) {
+    currentIndex = (currentIndex + direction + images.length) % images.length;
+    updateModal();
+  }
+
+  function updateModal() {
+    const modalImg = document.getElementById("modalImage");
+    const modalCap = document.getElementById("modalCaption");
+    modalImg.src = images[currentIndex].src;
+    modalCap.textContent = images[currentIndex].caption;
+  }
+
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeModal();
+    if (e.key === "ArrowRight") changeSlide(1);
+    if (e.key === "ArrowLeft") changeSlide(-1);
+  });
+
+  var slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
